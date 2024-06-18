@@ -2,6 +2,10 @@
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/isas2/rails-project-64/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/isas2/rails-project-64/actions)
+[![CI](https://github.com/isas2/rails-project-64/actions/workflows/lint-test.yml/badge.svg)](https://github.com/isas2/rails-project-64/actions)
+
+### Развёрнутое приложение
+[https://mycorpblog.onrender.com/](https://mycorpblog.onrender.com/).
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

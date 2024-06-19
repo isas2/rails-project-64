@@ -1,20 +1,31 @@
-.container.mb-2
-  .py-2.border-bottom
-    .navbar.navbar-expand-md.navbar-light
-      a.navbar-brand.me-md-4(href='/')
-        = image_tag asset_path('logo.png'), width: 30, alt: t('hexlet_logo')
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  .container-fluid
+    a.navbar-brand.me-md-4(href='/')
+      = image_tag asset_path('logo.png'), width: 30, alt: t('hexlet_logo')
+    a.navbar-brand[href="#"]
+      | Navbar
 
-      #navbarToggler.collapse.navbar-collapse
-        ul.nav.nav-pills.flex-grow-1.navbar-nav
-          li.nav-item.me-2
-            = link_to t('home'), root_path, class: 'nav-link link-dark'
-        ul.navbar-nav
-          - if user_signed_in?
-            = button_to t('.sign_out'), destroy_user_session_path,
-                    method: :delete,
-                    class: 'nav-link link-dark'
-          - else
-            = link_to t('.sign_in'), new_user_session_path,
-                    class: 'nav-link link-dark'
-            = link_to t('.register'), new_user_registration_path,
-                    class: 'nav-link link-dark'
+    ul.navbar-nav.me-auto.mb-2.mb-lg-0
+      li.nav-item
+        = link_to t('home'), root_path, class: 'nav-link link-dark'
+      li.nav-item
+        a.nav-link[href="#"]
+          | Link
+      li.nav-item
+        a.nav-link.disabled
+          | Disabled
+
+    / form.d-flex
+    /   input.form-control.me-2[type="search" placeholder="Search" aria-label="Search"]
+    /   button.btn.btn-outline-success[type="submit"]
+    /     | Search
+    ul.navbar-nav
+      - if user_signed_in?
+        = button_to t('.sign_out'), destroy_user_session_path,
+                method: :delete,
+                class: 'nav-link link-dark'
+      - else
+        = link_to t('.sign_in'), new_user_session_path,
+                class: 'nav-link link-dark'
+        = link_to t('.register'), new_user_registration_path,
+                class: 'nav-link link-dark'

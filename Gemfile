@@ -6,31 +6,26 @@ ruby '3.2.2'
 
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
+gem 'importmap-rails'
 gem 'jbuilder'
-gem 'jsbundling-rails'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
+gem 'redis', '>= 4.0.1'
 gem 'sprockets-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[ windows jruby ]
 
 gem 'bootstrap'
 gem 'devise'
-gem 'devise-bootstrap-views'
-gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'simple_form'
 gem 'slim-rails'
-gem 'stackprof'
 gem 'stimulus-rails'
-
-# gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]
-  gem 'html2slim'
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'rubocop-rails'

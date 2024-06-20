@@ -1,0 +1,24 @@
+p style='color: green' = notice
+
+.row.justify-content-center.mt-4
+  article.col-12
+    h1.mb-4.mb-lg-5
+      =< @post.title
+    p
+    p
+      =< @post.body
+    p
+    .d-flex.justify-content-between.mt-5
+      .post-section
+        span.me-2
+          =< @post.category.name
+        span.me-2
+          =< @post.creator.email
+    p
+
+div
+  => link_to 'Edit this post', edit_post_path(@post)
+  '|
+  =< link_to 'Back to posts', posts_path
+
+  = button_to 'Destroy this post', @post, method: :delete

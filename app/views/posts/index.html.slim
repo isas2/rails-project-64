@@ -1,0 +1,22 @@
+h1 Коллективный блог
+
+#posts
+  - @posts.each do |post|
+    .row
+      .col-md-12
+        .card.mb-3
+          .card-body
+            h2.h5.card-title
+              = link_to post, class: 'link-dark text-decoration-none'
+                =< post.title
+            .card-text.mb-2
+              - if post.body.length > 300
+                =< post.body[0, 297]
+                = '...'
+              - else
+                =< post.body
+            .text-right.small.text-muted.mt-auto
+              span.me-2
+                =< post.category.name
+              span.me-2
+                =< post.creator.email

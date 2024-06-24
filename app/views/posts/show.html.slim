@@ -18,7 +18,7 @@ ol.breadcrumb
         span.me-3
           = @post.creator.email
         span
-          = distance_of_time_in_words(Time.now, @post.created_at)
+          = distance_of_time_in_words(Time.current, @post.created_at)
     p
 
 == render 'posts/comments/index'

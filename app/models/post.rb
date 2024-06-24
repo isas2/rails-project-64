@@ -6,5 +6,5 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :delete_all, class_name: 'PostComment'
 
   validates :title, presence: true
-  validates :body, length: { minimum: 50, maximum: 2048 }
+  validates :body, length: { minimum: 5, maximum: 2048 }
 end

@@ -1,8 +1,9 @@
 en:
-  hello: "Collective blog"
+  answer: Answer
   home: Home
-  hexlet_logo: © Hexlet
-  layouts:
-    application:
-      title: Home
-      hexlet_title: © Hexlet
+  title: Collective blog
+  date:
+    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+  time:
+    formats:
+      comment: '%d %B, %H:%M'

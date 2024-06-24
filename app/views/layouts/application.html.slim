@@ -1,7 +1,7 @@
 doctype html
 html.h-100
   head
-    title = t('.title')
+    title = t('title')
     == csrf_meta_tags
     == csp_meta_tag
     meta name="keywords" content="template language"
@@ -22,4 +22,4 @@ html.h-100
     footer.mt-auto
       .container-xl
         .row.py-2
-          = t('.hexlet_title')
+          = t('.hexlet_title', year: Time.current.year)

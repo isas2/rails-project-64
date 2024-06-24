@@ -1,0 +1,38 @@
+---
+ru:
+  posts:
+    all: Все посты
+    back: Назад к постам
+
+    new:
+      title: Новый пост
+
+    create:
+      success: Пост успешно создан.
+
+    destroy:
+      success: Пост успешно удален.
+
+    edit:
+      show: Показать этот пост
+      title: Редактирование поста
+
+    index:
+      title: Посты
+
+    show:
+      edit: Редактировать пост
+      destroy: Удалить пост
+
+    update:
+      success: Пост успешно обновлен.
+
+    comments:
+      new:
+        title: Добавить комментарий
+
+      create:
+        success: Комментарий успешно создан.
+
+      index:
+        title: Комментарии

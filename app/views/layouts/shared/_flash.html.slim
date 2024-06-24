@@ -1,4 +1,4 @@
 - if flash.any?
-  - flash.to_hash.each_value do |msg|
-    .alert.alert-info
-      = msg
+  - flash.each do |type, message|
+    div class="alert #{get_flash_class_for(type)}" role="alert"
+      = message

@@ -1,19 +1,16 @@
 .d-flex.flex-wrap.align-items-center.py-2.border-bottom
   .navbar.navbar-expand-md.navbar-light.me-auto
     a.navbar-brand.me-md-4(href='/')
-      = image_tag asset_path('logo.png'), width: 30
-    / a.navbar-brand[href="#"]
-    /   | Блог
-    /
+      = image_tag asset_path('logo.png'), width: 30, alt: t('.hexlet_logo')
+    a.navbar-brand[href="/"]
+      | Блог
+
     / ul.navbar-nav.me-auto.mb-2.mb-lg-0
     /   li.nav-item
-        = link_to t('home'), root_path, class: 'nav-link link-dark'
-      / li.nav-item
-      /   a.nav-link[href="#"]
-      /     | Link
-      / li.nav-item
-      /   a.nav-link.disabled
-      /     | Disabled
+    /     = link_to t('home'), root_path, class: 'nav-link link-dark'
+    /   li.nav-item
+    /     a.nav-link[href="#"]
+    /       | Link
 
     / form.d-flex
     /   input.form-control.me-2[type="search" placeholder="Search" aria-label="Search"]
@@ -22,8 +19,11 @@
 
   ul.nav.nav-pills
     - if user_signed_in?
+      li.nav-item
+        a.nav-link.disabled
+          = current_user.email
       li.nav-item.me-2
-        = link_to t('posts.add.title'), new_post_path,
+        = link_to t('posts.new.title'), new_post_path,
                 class: 'nav-link link-dark'
       li.nav-item.me-2
         = button_to t('.sign_out'), destroy_user_session_path,

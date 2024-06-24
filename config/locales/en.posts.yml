@@ -1,7 +1,10 @@
 en:
   posts:
-    add:
-      title: New Post
+    all: All posts
+    back: Back to posts
+
+    new:
+      title: New post
 
     create:
       success: Post was successfully created.
@@ -10,23 +13,25 @@ en:
       success: Post was successfully destroyed.
 
     edit:
+      show: Show this post
       title: Editing post
 
     index:
       title: Posts
 
+    show:
+      edit: Edit this post
+      destroy: Destroy post
+
     update:
       success: Post was successfully updated.
 
     comments:
-      add:
+      new:
         title: New comment
 
-      edit:
-        title: Editing comment
-
       create:
-        success: Comment was created.
+        success: Comment was successfully created.
 
-      update:
-        success: Comment was updated.
+      index:
+        title: Comments

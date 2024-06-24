@@ -1,0 +1,25 @@
+en:
+  simple_form:
+    hints:
+      post:
+        category: Select post category
+        body: Enter post body
+        title: Enter post title
+      post_comment:
+        show:
+          content: Enter comment body
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: 'required'
+      mark: '*'
+    error_notification:
+      default_message: "Please review the problems below:"
+    placeholders:
+      post:
+        body: Post body
+        title: Title
+      post_comment:
+        body: Enter comment body
+        show:
+          content: Comment body

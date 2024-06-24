@@ -10,7 +10,12 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1 or /posts/1.json
-  def show; end
+  def show
+    @post_comments = @post.comments.where(ancestry: '/')
+    @post_comment = PostComment.new
+    @post_comment.post_id = @post.id
+    @new_comment_url = post_comments_path(@post)
+  end
 
   # GET /posts/new
   def new
@@ -53,7 +58,7 @@ class PostsController < ApplicationController
     @post.destroy!
 
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: t('.success') }
+      format.html { redirect_to root_url, notice: t('.success') }
       format.json { head :no_content }
     end
   end
@@ -67,6 +72,7 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:title, :body, :category_id, :creator_id)
+    data = params.require(:post).permit(:title, :body, :category_id)
+    data.merge(creator_id: current_user.id)
   end
 end

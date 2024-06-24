@@ -15,6 +15,7 @@ gem 'sprockets-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[ windows jruby ]
 
+gem 'ancestry'
 gem 'bootstrap'
 gem 'devise'
 gem 'rails-i18n'
@@ -26,6 +27,7 @@ gem 'stimulus-rails'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]
+  gem 'i18n-debug'
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'rubocop-rails'

@@ -1,7 +1,7 @@
-en:
+ru:
   layouts:
     application:
-      hexlet_title: © Hexlet, %{year}
+      hexlet_title: © Хекслет, %{year}
     web:
       account:
         application:
@@ -20,11 +20,11 @@ en:
             %{count} Answers
       nav:
         en: English
-        hexlet_logo: Hexlet
+        hexlet_logo: Хекслет
         ru: Russian
-        sign_in: Sign in
-        sign_out: Sign out
-        register: Sign up
+        sign_in: Войти
+        sign_out: Выйти
+        register: Зарегистрироваться
       footer:
         hexlet_html: Hexlet &copy;
         hexlet_link: https://hexlet.io

@@ -1,0 +1,16 @@
+ru:
+  answer: Ответить
+  title: Коллективный блог
+  show: Показать
+  destroy: Удалить
+  destroy_confirmation: Вы уверены?
+  back: Назад
+  home:
+    link: Домой
+    title: Домашняя страница
+  hexlet_logo: Логотип Хекслет
+  date:
+    month_names: [~, января, февраля, марта, апреля, мая, июня, июля, августя, сентября, октября, ноября, декабря]
+  time:
+    formats:
+      comment: '%d %B, %H:%M'

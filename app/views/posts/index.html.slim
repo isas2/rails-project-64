@@ -1,4 +1,5 @@
-h1 Коллективный блог
+h1
+  = t('title')
 
 #posts
   - @posts.each do |post|
@@ -9,12 +10,14 @@ h1 Коллективный блог
             h2.h5.card-title
               = link_to post, class: 'link-dark text-decoration-none'
                 =< post.title
+
             .card-text.mb-2
               - if post.body.length > 300
                 =< post.body[0, 297]
                 = '...'
               - else
                 =< post.body
+
             .text-right.small.text-muted.mt-auto
               span.me-2
                 =< post.category.name

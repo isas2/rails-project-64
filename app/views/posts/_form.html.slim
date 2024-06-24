@@ -6,7 +6,6 @@
     = f.input :title
     = f.input :body
     = f.association :category
-    = f.association :creator, label_method: :email, value_method: :id
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, class: 'btn btn-primary'

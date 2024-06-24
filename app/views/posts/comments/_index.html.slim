@@ -1,0 +1,11 @@
+#comment-section.lead.mt-3
+  span
+    = t('.title')
+
+  - if user_signed_in?
+    == render 'posts/comments/form'
+
+  - @post_comments.each do |post_comment|
+    == render 'posts/comments/post_comment', post_comment:
+
+  / == render 'posts/comments/post_comment', collection: @post_comments

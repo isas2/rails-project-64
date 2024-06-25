@@ -14,7 +14,7 @@ en:
       text: 'required'
       mark: '*'
     error_notification:
-      default_message: "Please review the problems below:"
+      default_message: 'Please review the problems below:'
     placeholders:
       post:
         body: Post body

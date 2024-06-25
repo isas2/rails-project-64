@@ -3,9 +3,6 @@
     = t('.title')
 
   - if user_signed_in?
-    == render 'posts/comments/form'
+    == render 'posts/comments/form1'
 
-  - @post_comments.each do |post_comment|
-    == render 'posts/comments/post_comment', post_comment:
-
-  / == render 'posts/comments/post_comment', collection: @post_comments
+  == render partial: 'posts/comments/post_comment', collection: @post_comments

@@ -1,9 +1,30 @@
+---
 en:
-  answer: Answer
-  home: Home
-  title: Collective blog
   date:
-    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    month_names:
+    -
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+  layouts:
+    application:
+      hexlet_title: © Hexlet, %{year}
+      title: Collective blog
+    shared:
+      nav:
+        hexlet_logo: Hexlet
+        sign_in: Sign in
+        sign_out: Sign out
+        register: Sign up
   time:
     formats:
-      comment: '%d %B, %H:%M'
+      comment: "%d %B, %H:%M"

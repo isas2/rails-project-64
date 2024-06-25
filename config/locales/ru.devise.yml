@@ -1,36 +1,4 @@
 ru:
-  activerecord:
-    attributes:
-      user:
-        confirmation_sent_at: Дата отправки подтверждения
-        confirmation_token: Токен подтверждения
-        confirmed_at: Дата подтверждения
-        created_at: Дата создания
-        current_password: Текущий пароль
-        current_sign_in_at: Дата текущего входа
-        current_sign_in_ip: IP текущего входа
-        email: Email
-        encrypted_password: Зашифрованный пароль
-        failed_attempts: Неудачные попытки
-        last_sign_in_at: Дата последнего входа
-        last_sign_in_ip: IP последнего входа
-        locked_at: Дата блокировки
-        password: Пароль
-        password_confirmation: Подтверждение пароля
-        remember_created_at: Дата создания запоминания
-        remember_me: Запомнить меня
-        reset_password_sent_at: Дата отправки сброса пароля
-        reset_password_token: Токен сброса пароля
-        sign_in_count: Количество входов
-        unconfirmed_email: Неподтвержденный email
-        unlock_token: Токен разблокировки
-        updated_at: Дата обновления
-    models:
-      user:
-        few: Пользователя
-        many: Пользователей
-        one: Пользователь
-        other: Пользователи
   devise:
     confirmations:
       confirmed: Ваш адрес эл. почты успешно подтвержден.
@@ -48,34 +16,6 @@ ru:
       timeout: Ваш сеанс закончился. Пожалуйста, войдите в систему снова.
       unauthenticated: Вам необходимо войти в систему или зарегистрироваться.
       unconfirmed: Вы должны подтвердить вашу учетную запись.
-    mailer:
-      confirmation_instructions:
-        action: Активировать
-        greeting: Здравствуйте, %{recipient}!
-        instruction: 'Вы можете активировать свою учетную запись, нажав ссылку снизу:'
-        subject: Инструкции по подтверждению учетной записи
-      email_changed:
-        greeting: Здравствуйте, %{recipient}!
-        message: Мы пытаемся связаться с вами, чтобы сообщить, что ваш email был изменен на %{email}.
-        message_unconfirmed: Мы пытаемся связаться с вами, чтобы сообщить, что ваш email будет изменен на %{email}.
-        subject: Email изменен
-      password_change:
-        greeting: Приветствуем, %{recipient}!
-        message: Мы пытаемся связаться с вами, что бы сообщить, что ваш пароль был изменен.
-        subject: Пароль изменен
-      reset_password_instructions:
-        action: Изменить пароль
-        greeting: Здравствуйте, %{recipient}!
-        instruction: 'Вы (или кто-то еще) запросили изменение пароля. Для изменения пароля нажмите ссылку ниже:'
-        instruction_2: Если вы не запрашивали изменение пароля - проигнорируйте это сообщение
-        instruction_3: Ваш пароль не изменится пока вы не нажмете на ссылку и не введете новый.
-        subject: Инструкции по восстановлению пароля
-      unlock_instructions:
-        action: Разблокировать учетную запись
-        greeting: Здравствуйте, %{recipient}!
-        instruction: 'Нажмите ссылку для активации учетной записи:'
-        message: Ваша учетная запись была заблокирована в связи с превышением лимита неудачных попыток входа.
-        subject: Инструкции по разблокировке учетной записи
     omniauth_callbacks:
       failure: Вы не можете войти в систему с учетной записью из %{kind}, т.к. "%{reason}".
       success: Вход в систему выполнен с учетной записью из %{kind}.

@@ -1,6 +1,5 @@
 en:
   posts:
-    all: All posts
     back: Back to posts
 
     new:
@@ -17,9 +16,11 @@ en:
       title: Editing post
 
     index:
-      title: Posts
+      likes: 'Likes:'
+      title: Collective blog
 
     show:
+      all: All posts
       edit: Edit this post
       destroy: Destroy post
 
@@ -32,6 +33,9 @@ en:
 
       create:
         success: Comment was successfully created.
+
+      form2:
+        answer: Answer
 
       index:
         title: Comments

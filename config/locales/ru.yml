@@ -1,16 +1,30 @@
+---
 ru:
-  answer: Ответить
-  title: Коллективный блог
-  show: Показать
-  destroy: Удалить
-  destroy_confirmation: Вы уверены?
-  back: Назад
-  home:
-    link: Домой
-    title: Домашняя страница
-  hexlet_logo: Логотип Хекслет
   date:
-    month_names: [~, января, февраля, марта, апреля, мая, июня, июля, августя, сентября, октября, ноября, декабря]
+    month_names:
+    -
+    - января
+    - февраля
+    - марта
+    - апреля
+    - мая
+    - июня
+    - июля
+    - августя
+    - сентября
+    - октября
+    - ноября
+    - декабря
+  layouts:
+    application:
+      hexlet_title: © Хекслет, %{year}
+      title: Коллективный блог
+    shared:
+      nav:
+        hexlet_logo: Хекслет
+        sign_in: Войти
+        sign_out: Выйти
+        register: Зарегистрироваться
   time:
     formats:
-      comment: '%d %B, %H:%M'
+      comment: "%d %B, %H:%M"

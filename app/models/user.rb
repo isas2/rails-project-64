@@ -8,4 +8,5 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :nullify
   has_many :comments, dependent: :delete_all, class_name: 'PostComment'
+  has_many :likes, dependent: :delete_all, class_name: 'PostLike'
 end

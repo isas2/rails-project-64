@@ -1,5 +1,5 @@
 h1
-  = t('title')
+  = t('.title')
 
 #posts
   - @posts.each do |post|
@@ -20,6 +20,9 @@ h1
 
             .text-right.small.text-muted.mt-auto
               span.me-2
-                =< post.category.name
+                => t('.likes')
+                = post.likes.count
               span.me-2
-                =< post.creator.email
+                = distance_of_time_in_words(Time.current, post.created_at)
+              span
+                = post.creator.email

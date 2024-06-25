@@ -1,19 +1,25 @@
-div id="comment-#{post_comment.id}" class="card mt-2 rounded-0"
-  .card-header.border-0
-    = link_to '#', "#comment-#{post_comment.id}", class: 'me-2'
-    span.me-2
-      = post_comment.user.email
-    span.fs-6.text-muted
-      = l(post_comment.created_at, format: :comment)
+- rendered_content = capture do
+  div id="comment-#{post_comment.id}" class="card mt-2 rounded-0"
+    .card-header.border-0
+      = link_to '#', "#comment-#{post_comment.id}", class: 'me-2'
+      span.me-2
+        = post_comment.user.email
+      span.fs-6.text-muted
+        = l(post_comment.created_at, format: :comment)
 
-  .card-body.border-0
-    .card-text
-      = post_comment.content
+    .card-body.border-0
+      .card-text
+        = post_comment.content
 
-  - if user_signed_in?
-    .card-footer.border-0
-      == render 'posts/comments/form2', parent_id: post_comment.id
+    - if user_signed_in?
+      .card-footer.border-0
+        == render 'posts/comments/form2', parent_id: post_comment.id
 
-  - post_comment.children.each do |child|
-    .ms-4
-      == render 'posts/comments/post_comment', post_comment: child
+    == render partial: 'posts/comments/post_comment',
+            collection: post_comment.children, locals: { child: true }
+
+- if defined?(child) && child
+  .ms-4
+    = rendered_content
+- else
+  = rendered_content

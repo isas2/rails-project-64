@@ -1,19 +1,8 @@
 # frozen_string_literal: true
 
 class Posts::CommentsController < Posts::ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!
 
-  # GET /post_comments or /post_comments.json
-  def index
-    @post_comments = PostComment.all
-  end
-
-  # GET /post_comments/new
-  def new
-    @post_comment = PostComment.new
-  end
-
-  # POST /post_comments or /post_comments.json
   def create
     @post_comment = PostComment.new(comment_params)
     respond_to do |format|
@@ -28,7 +17,6 @@ class Posts::CommentsController < Posts::ApplicationController
 
   private
 
-  # Only allow a list of trusted parameters through.
   def comment_params
     data = params.require(:post_comment).permit(:content, :ancestry)
     updates = {

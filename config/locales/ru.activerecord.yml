@@ -9,6 +9,11 @@ ru:
         body: Содержание
         comment: Комментарий
         comments: Комментарии
+      user:
+        email: Емейл
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        remember_me: Запомнить меня
 
     errors:
       models:
@@ -16,20 +21,17 @@ ru:
           attributes:
             title:
               blank: Должно быть заполнено
-            bo7dy:
+            body:
               blank: Должно быть заполнено
 
     models:
       post:
-        few: поста
-        many: постов
         one: пост
-        other: Посты
-        zero: Нет постов
+        other: посты
       post_comment: комментарий
       post/comment:
-        few: "%{count} комментария"
-        many: "%{count} комментариев"
-        one: "%{count} комментарий"
-        other: Комментарии
-        zero: нет комментариев
+        one: комментарий
+        other: комментарии
+      user:
+        one: Пользователь
+        other: Пользователи

@@ -9,6 +9,11 @@ en:
         body: Body
         comment: Comment
         comments: Comments
+      user:
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
+        remember_me: Remember me
 
     errors:
       models:
@@ -21,14 +26,11 @@ en:
 
     models:
       post:
-        few: Posts
         one: Post
-        many: Posts
-        zero: No posts
         other: Posts
       post/comment:
-        few: "%{count} comments"
-        one: "%{count} comment"
-        many: "%{count} comments"
+        one: Comment
         other: Comments
-        zero: No comments
+      user:
+        one: User
+        other: Users

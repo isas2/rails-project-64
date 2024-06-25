@@ -11,17 +11,14 @@ user_data = {
   encrypted_password: Devise::Encryptor.digest(User, 'B?J1r+@,P%f7aBLzK$^'),
   email: 'as@example.com'
 }
-unless User.find_by(email: user_data[:email])
-  User.create(user_data)
-end
-user = User.find_by(email: user_data[:email])
+User.create(user_data) unless User.find_by(email: user_data[:email])
 
 # add posts
 4.times do
   Post.create(
     title: Faker::Lorem.sentence.chomp('.'),
     body: Faker::Lorem.paragraphs.join("\n\n"),
-    creator_id: user.id,
+    creator_id: User.last,
     category_id: Category.all.sample.id
   )
 end

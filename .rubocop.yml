@@ -37,8 +37,8 @@ Rails:
   Enabled: true
 
 require:
-#  - rubocop-performance
   - rubocop-rails
+  - rubocop-performance
 
 Style/AsciiComments:
   Enabled: false

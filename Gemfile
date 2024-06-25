@@ -19,7 +19,6 @@ gem 'ancestry'
 gem 'bootstrap'
 gem 'devise'
 gem 'devise-bootstrap-views'
-# gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'sentry-rails'
 gem 'sentry-ruby'
@@ -29,6 +28,7 @@ gem 'stimulus-rails'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]
+  gem 'faker'
   gem 'i18n-debug'
   gem 'i18n-tasks'
   gem 'rubocop'

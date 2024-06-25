@@ -1,24 +1,27 @@
 # frozen_string_literal: true
 
 # add categories
-categories = [
-  'Ruby',
-  'Ruby on Rails',
-  'JavaScript',
-  'DevOps',
-  'Тестирование',
-  'Новости и объявления',
-  'ИТ справочник'
-]
-categories.each do |category|
+7.times do
+  category = Faker::ProgrammingLanguage.unique.name
   Category.create(name: category) unless Category.find_by(name: category)
 end
 
 # add user
-user = {
+user_data = {
   encrypted_password: Devise::Encryptor.digest(User, 'B?J1r+@,P%f7aBLzK$^'),
   email: 'as@example.com'
 }
-unless User.find_by(email: user[:email])
-  User.create(user)
+unless User.find_by(email: user_data[:email])
+  User.create(user_data)
+end
+user = User.find_by(email: user_data[:email])
+
+# add posts
+4.times do
+  Post.create(
+    title: Faker::Lorem.sentence.chomp('.'),
+    body: Faker::Lorem.paragraphs.join("\n\n"),
+    creator_id: user.id,
+    category_id: Category.all.sample.id
+  )
 end

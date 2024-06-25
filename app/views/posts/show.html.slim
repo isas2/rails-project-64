@@ -11,7 +11,7 @@ ol.breadcrumb
       =< @post.title
     p
     p
-      =< @post.body
+      =< simple_format(@post.body)
     p
     .d-flex.justify-content-between.mt-5
       .post-section

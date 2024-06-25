@@ -1,4 +1,4 @@
-# README
+# Коллективный блог
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/isas2/rails-project-64/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/isas2/rails-project-64/actions)
@@ -7,25 +7,37 @@
 ### Развёрнутое приложение
 [https://mycorpblog.onrender.com/](https://mycorpblog.onrender.com/).
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Коллективный блог - готовый к использованию в вашей организации блог, написанный на Ruby on Rails.
 
-Things you may want to cover:
+Основные возможности:
 
-* Ruby version
+* Аутентификация пользователей;
+* Публикация и редактирование постов пользователями блога;
+* Выбор категории поста при публикации;
+* Возможность делать комментарии к постам;
+* Возможность отвечать на комментарии и вопросы;
+* Поддержка древовидной структуры комментариев;
+* Возможность лайкать посты, которые нам понравились.
 
-* System dependencies
+## Установка зависимостей
 
-* Configuration
+```sh
+make setup
+```
 
-* Database creation
+## Запуск тестов
 
-* Database initialization
+```sh
+make test
+```
 
-* How to run the test suite
+## Запуск проверки синтаксиса
 
-* Services (job queues, cache servers, search engines, etc.)
+```sh
+make lint
+make lint-fix
+```
 
-* Deployment instructions
+## Лицензия
 
-* ...
+[MIT License](https://opensource.org/licenses/MIT).

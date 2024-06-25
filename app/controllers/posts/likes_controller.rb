@@ -16,9 +16,8 @@ class Posts::LikesController < Posts::ApplicationController
 
   def destroy
     like = PostLike.find(params[:id])
-    return unless like.user_id == current_user.id
+    like.destroy! if like.user_id == current_user.id
 
-    like.destroy!
     respond_to do |format|
       format.html { redirect_to post_url(like.post_id) }
     end

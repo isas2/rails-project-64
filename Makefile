@@ -1,5 +1,4 @@
 setup:
-	bundle install
 	bin/setup
 	bin/rails db:seed
 	yarn

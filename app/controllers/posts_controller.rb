@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.includes(:category, :creator).find(params[:id])
-    @like = current_user.likes.find_by(post_id: @post.id)
+    @like = current_user.likes.find_by(post_id: @post.id) if user_signed_in?
     @post_comments = PostComment.includes(:user).where(post_id: params[:id])
                                 .order(created_at: :desc).arrange
     @post_comment = @post.comments.build

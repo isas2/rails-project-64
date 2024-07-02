@@ -7,11 +7,19 @@
 end
 
 # add user
-user_data = {
-  encrypted_password: Devise::Encryptor.digest(User, 'B?J1r+@,P%f7aBLzK$^'),
-  email: 'as@example.com'
-}
-User.create(user_data) unless User.find_by(email: user_data[:email])
+users_data = [
+  {
+    encrypted_password: Devise::Encryptor.digest(User, '2`.BpzKqqUK_HZ5Q1h00'),
+    email: 'user2@example.com'
+  },
+  {
+    encrypted_password: Devise::Encryptor.digest(User, 'B?J1r+@,P%f7aBLzK$^'),
+    email: 'as@example.com'
+  }
+]
+users_data.each do |user_data|
+  User.create(user_data) unless User.find_by(email: user_data[:email])
+end
 
 # add posts
 4.times do

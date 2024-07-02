@@ -14,15 +14,22 @@ ru:
         password: Пароль
         password_confirmation: Подтверждение пароля
         remember_me: Запомнить меня
+      post_like:
+        user_id: Пользователь
+        post_id: Пост
 
     errors:
       models:
         post:
           attributes:
             title:
-              blank: Должно быть заполнено
+              blank: должно быть заполнено
             body:
-              blank: Должно быть заполнено
+              blank: должно быть заполнено
+        post_like:
+          attributes:
+            user_id:
+              taken: уже лайкнул этот пост
 
     models:
       post:

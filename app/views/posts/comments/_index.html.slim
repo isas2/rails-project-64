@@ -3,6 +3,6 @@
     = t('.title')
 
   - if user_signed_in?
-    == render 'posts/comments/form1'
+    == render 'posts/comments/root_form'
 
   == render partial: 'posts/comments/post_comment', collection: @post_comments

@@ -1,13 +1,11 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  title: MyString
-  body: MyText sasd dsfsdf sdf sdfsdf sdfsdfsd fsdf sd f  sdf sdf s dfsdf
+  title: Faker::Lorem.sentence.chomp('.'),
+  body: Faker::Lorem.paragraphs.join("\n\n")
   category: one
   creator: one
 
 two:
-  title: MyString
-  body: MyText wqeqw 243 4545 34 435    345345345345345345 345345345345345
+  title: Faker::Lorem.sentence.chomp('.')
+  body: Faker::Lorem.paragraphs.join("\n\n")
   category: two
   creator: two

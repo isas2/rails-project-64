@@ -22,6 +22,7 @@ en:
     shared:
       nav:
         hexlet_logo: Hexlet
+        home_link: Blog
         sign_in: Sign in
         sign_out: Sign out
         register: Sign up

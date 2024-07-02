@@ -4,31 +4,13 @@ class Posts::LikesController < Posts::ApplicationController
   before_action :authenticate_user!
 
   def create
-    like = PostLike.new(like_params)
-
-    respond_to do |format|
-      unless like.save
-        flash[:error] = like.errors.full_messages.first
-      end
-      format.html { redirect_to post_url(like.post_id) }
-    end
+    like = current_user.likes.build(post_id: params[:post_id])
+    flash[:error] = like.errors.full_messages.first unless like.save
+    redirect_to post_url(like.post_id)
   end
 
   def destroy
-    like = PostLike.find(params[:id])
-    like.destroy! if like.user_id == current_user.id
-
-    respond_to do |format|
-      format.html { redirect_to post_url(like.post_id) }
-    end
-  end
-
-  private
-
-  def like_params
-    {
-      post_id: params.require(:post_id),
-      user_id: current_user.id
-    }
+    current_user.likes.find_by(id: params[:id])&.destroy
+    redirect_to post_url(params[:post_id])
   end
 end

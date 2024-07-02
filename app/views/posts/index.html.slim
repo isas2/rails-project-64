@@ -12,16 +12,12 @@ h1
                 =< post.title
 
             .card-text.mb-2
-              - if post.body.length > 300
-                =< post.body[0, 297]
-                = '...'
-              - else
-                =< post.body
+              = truncate(post.body, length: 300)
 
             .text-right.small.text-muted.mt-auto
               span.me-2
                 => t('.likes')
-                = post.likes.count
+                = post.likes.size
               span.me-2
                 = distance_of_time_in_words(Time.current, post.created_at)
               span

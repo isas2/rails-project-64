@@ -7,6 +7,6 @@ module ApplicationHelper
       error: 'alert-danger',
       alert: 'alert-warning',
       notice: 'alert-info'
-    }[type.to_sym] || type.to_s
+    }[type.to_sym]
   end
 end

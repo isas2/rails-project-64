@@ -22,6 +22,7 @@ ru:
     shared:
       nav:
         hexlet_logo: Хекслет
+        home_link: Блог
         sign_in: Войти
         sign_out: Выйти
         register: Зарегистрироваться

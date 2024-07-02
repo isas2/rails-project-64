@@ -21,11 +21,10 @@ ol.breadcrumb
           = distance_of_time_in_words(Time.current, @post.created_at)
       .likes-section.d-flex.flex-wrap
         span.me-2
-          = @post.likes.count
+          = @post.likes.size
         - if user_signed_in?
-          - likes = current_user.likes.where(post_id: @post.id)
-          - if likes.any?
-            = button_to post_like_url(@post, likes.first), method: :delete, class: 'nav-link link-dark'
+          - if @like
+            = button_to post_like_url(@post, @like), method: :delete, class: 'nav-link link-dark'
               i.bi.bi-hand-thumbs-up-fill
           - else
             = button_to post_likes_url(@post), method: :post, class: 'nav-link link-dark'

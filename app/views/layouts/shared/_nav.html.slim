@@ -3,7 +3,7 @@
     a.navbar-brand.me-md-4(href='/')
       = image_tag asset_path('logo.png'), width: 30, alt: t('.hexlet_logo')
     a.navbar-brand[href="/"]
-      | Блог
+      = t('.home_link')
 
   ul.nav.nav-pills
     - if user_signed_in?

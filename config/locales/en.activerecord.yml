@@ -14,6 +14,9 @@ en:
         password: Password
         password_confirmation: Password confirmation
         remember_me: Remember me
+      post_like:
+        user_id: User
+        post_id: Post
 
     errors:
       models:
@@ -23,6 +26,10 @@ en:
               blank: should be filled
             body:
               blank: should be filled
+        post_like:
+          attributes:
+            user_id:
+              taken: already liked this post
 
     models:
       post:

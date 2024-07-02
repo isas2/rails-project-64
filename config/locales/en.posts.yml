@@ -34,7 +34,7 @@ en:
       create:
         success: Comment was successfully created.
 
-      form2:
+      children_form:
         answer: Answer
 
       index:

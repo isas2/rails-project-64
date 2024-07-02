@@ -8,21 +8,26 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @like = post_likes(:one)
     sign_in users(:one)
+    @attrs = {
+      user_id: users(:one).id,
+      post_id: post_likes(:two).id
+    }
   end
 
   test 'should create like' do
     assert_difference('PostLike.count') do
-      post post_likes_url(@like.post_id), params: { like: { user_id: @like.user_id, post_id: @like.post_id } }
+      post post_likes_url(@attrs[:post_id])
     end
 
-    assert_redirected_to post_url(@like.post_id)
+    assert_not_nil PostLike.find_by(@attrs)
   end
 
   test 'should destroy like' do
+    like_for_delete = PostLike.create!(@attrs)
     assert_difference('PostLike.count', -1) do
-      delete post_like_url(@like.post_id, @like)
+      delete post_like_url(like_for_delete.post_id, like_for_delete)
     end
 
-    assert_redirected_to post_url(@like.post_id)
+    assert_nil PostLike.find_by(id: like_for_delete.id)
   end
 end

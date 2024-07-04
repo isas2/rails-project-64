@@ -24,10 +24,10 @@ ol.breadcrumb
           = @post.likes.size
         - if user_signed_in?
           - if @like
-            = button_to post_like_url(@post, @like), method: :delete, class: 'nav-link link-dark'
+            = link_to post_like_url(@post, @like), data: { turbo_method: :delete }, class: 'nav-link link-dark'
               i.bi.bi-hand-thumbs-up-fill
           - else
-            = button_to post_likes_url(@post), method: :post, class: 'nav-link link-dark'
+            = link_to post_likes_url(@post), data: { turbo_method: :post }, class: 'nav-link link-dark'
               i.bi.bi-hand-thumbs-up
         - else
           i.bi.bi-hand-thumbs-up
@@ -38,5 +38,5 @@ ol.breadcrumb
 .d-flex.flex-wrap.mt-5
   - if user_signed_in? && current_user.id == @post.creator.id
     = link_to t('.edit'), edit_post_path(@post), class: 'link-dark text-decoration-none me-3'
-    = button_to t('.destroy'), post_path(@post), method: :delete, class: 'nav-link link-dark me-3'
+    = link_to t('.destroy'), post_path(@post), data: { turbo_method: :delete }, class: 'nav-link link-dark me-3'
   = link_to t('posts.back'), root_path, class: 'link-dark text-decoration-none'

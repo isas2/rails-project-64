@@ -6,32 +6,28 @@ ruby '3.2.2'
 
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
-gem 'importmap-rails'
 gem 'jbuilder'
+gem 'jsbundling-rails'
 gem 'puma', '>= 5.0'
-gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
-gem 'redis', '>= 4.0.1'
+gem 'rails', '~> 7.1.0'
 gem 'sprockets-rails'
+gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
 gem 'ancestry'
-gem 'bootstrap'
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'faker'
 gem 'rails-i18n'
-gem 'sentry-rails'
-gem 'sentry-ruby'
 gem 'simple_form'
 gem 'slim-rails'
-gem 'stimulus-rails'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]
   gem 'i18n-debug'
-  gem 'i18n-tasks'
   gem 'rubocop'
+  gem 'rubocop-capybara'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'slim_lint'
@@ -42,11 +38,12 @@ group :development do
   gem 'web-console'
 end
 
-group :production do
-  gem 'pg'
-end
-
 group :test do
+  gem 'capybara'
   gem 'minitest-power_assert'
   gem 'selenium-webdriver'
+end
+
+group :production do
+  gem 'pg'
 end

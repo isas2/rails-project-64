@@ -6,6 +6,7 @@ ruby '3.2.2'
 
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
+gem 'importmap-rails', '~> 2.0'
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'puma', '>= 5.0'
@@ -16,10 +17,13 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
 gem 'ancestry'
+gem 'bootstrap', '~> 5.3.3'
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'faker'
 gem 'rails-i18n'
+gem 'rails-ujs'
+gem 'sassc-rails'
 gem 'simple_form'
 gem 'slim-rails'
 

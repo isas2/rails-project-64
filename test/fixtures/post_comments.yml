@@ -1,5 +1,0 @@
-one:
-  content: Faker::Lorem.sentence.chomp('.')
-  user: one
-  post: one
-  ancestry: /

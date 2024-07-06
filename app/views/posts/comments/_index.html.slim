@@ -5,4 +5,5 @@
   - if user_signed_in?
     == render 'posts/comments/root_form'
 
-  == render partial: 'posts/comments/post_comment', collection: @post_comments
+  - @post_comments.each do |comment, child_comments|
+    = render 'posts/comments/post_comment', comment:, child_comments:

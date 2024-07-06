@@ -8,13 +8,11 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @post = posts(:one)
     sign_in users(:one)
-    @attrs = categories(:two, :three).map do |cat|
-      {
-        title: Faker::Lorem.sentence.chomp('.'),
-        body: Faker::Lorem.paragraphs.join("\n\n"),
-        category_id: cat.id
-      }
-    end
+    @attrs = {
+      title: Faker::Lorem.sentence.chomp('.'),
+      body: Faker::Lorem.paragraphs.join("\n\n"),
+      category_id: categories(:two).id
+    }
   end
 
   test 'should get index' do
@@ -29,10 +27,10 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create post' do
     assert_difference('Post.count') do
-      post posts_url, params: { post: @attrs.first }
+      post posts_url, params: { post: @attrs }
     end
 
-    assert_not_nil Post.find_by(@attrs.first)
+    assert_not_nil Post.find_by(@attrs)
   end
 
   test 'should show post' do
@@ -46,19 +44,16 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update post' do
-    post_for_update = Post.create!(@attrs.first.merge(creator_id: users(:one).id))
-    patch post_url(post_for_update), params: { post: @attrs.second }
+    patch post_url(@post), params: { post: @attrs }
 
-    created_post = Post.find_by(@attrs.second)
-    assert_equal created_post.id, post_for_update.id
+    assert_equal Post.find_by(@attrs).id, @post.id
   end
 
   test 'should destroy post' do
-    post_for_delete = Post.create!(@attrs.first.merge(creator_id: users(:one).id))
     assert_difference('Post.count', -1) do
-      delete post_url(post_for_delete)
+      delete post_url(@post)
     end
 
-    assert_nil Post.find_by(id: post_for_delete.id)
+    assert_nil Post.find_by(id: @post.id)
   end
 end

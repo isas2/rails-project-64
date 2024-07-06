@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class LikesControllerTest < ActionDispatch::IntegrationTest
+class Posts::LikesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   setup do
@@ -10,7 +10,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:one)
     @attrs = {
       user_id: users(:one).id,
-      post_id: post_likes(:two).id
+      post_id: posts(:two).id
     }
   end
 
@@ -23,11 +23,11 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should destroy like' do
-    like_for_delete = PostLike.create!(@attrs)
+    @like = PostLike.create!(@attrs)
     assert_difference('PostLike.count', -1) do
-      delete post_like_url(like_for_delete.post_id, like_for_delete)
+      delete post_like_url(@like.post_id, @like)
     end
 
-    assert_nil PostLike.find_by(id: like_for_delete.id)
+    assert_nil PostLike.find_by(id: @like.id)
   end
 end

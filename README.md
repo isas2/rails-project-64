@@ -5,7 +5,7 @@
 [![CI](https://github.com/isas2/rails-project-64/actions/workflows/lint-test.yml/badge.svg)](https://github.com/isas2/rails-project-64/actions)
 
 ### Развёрнутое приложение
-[https://mycorpblog.onrender.com/](https://mycorpblog.onrender.com/).
+[https://ror.zabedu.ru/](https://ror.zabedu.ru/).
 
 Коллективный блог - готовый к использованию в вашей организации блог, написанный на Ruby on Rails.
 

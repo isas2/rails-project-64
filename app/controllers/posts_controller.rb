@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if current_user.posts.find(params[:id])&.update(post_params)
+    if @post.update(post_params)
       redirect_to post_url(@post), notice: t('.success')
     else
       render :edit, status: :unprocessable_entity
@@ -41,14 +41,14 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    current_user.posts.find(params[:id])&.destroy
+    @post.destroy
     redirect_to root_url, notice: t('.success')
   end
 
   private
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = (current_user.posts.find_by(id: params[:id]) or not_found)
   end
 
   def post_params

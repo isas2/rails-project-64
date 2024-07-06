@@ -1,22 +1,22 @@
 - rendered_content = capture do
-  div id="comment-#{post_comment.first.id}" class="card mt-2 rounded-0"
+  div id="comment-#{comment.id}" class="card mt-2 rounded-0"
     .card-header.border-0
-      = link_to '#', "#comment-#{post_comment.first.id}", class: 'me-2'
+      = link_to '#', "#comment-#{comment.id}", class: 'me-2'
       span.me-2
-        = post_comment.first.user.email
+        = comment.user.email
       span.fs-6.text-muted
-        = l(post_comment.first.created_at, format: :comment)
+        = l(comment.created_at, format: :comment)
 
     .card-body.border-0
       .card-text
-        = post_comment.first.content
+        = comment.content
 
     - if user_signed_in?
       .card-footer.border-0
-        == render 'posts/comments/children_form', parent_id: post_comment.first.id
+        == render 'posts/comments/children_form', parent_id: comment.id
 
-    == render partial: 'posts/comments/post_comment',
-            collection: post_comment.last, locals: { child: true }
+    - child_comments.each do |comment, child_comments|
+      = render 'posts/comments/post_comment', comment:, child_comments:, child: true
 
 - if defined?(child) && child
   .ms-4

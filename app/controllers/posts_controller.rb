@@ -48,7 +48,7 @@ class PostsController < ApplicationController
   private
 
   def set_post
-    @post = (current_user.posts.find_by(id: params[:id]) or not_found)
+    @post = current_user.posts.find(params[:id])
   end
 
   def post_params
